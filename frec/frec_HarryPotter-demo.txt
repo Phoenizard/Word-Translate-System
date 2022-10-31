@@ -1,856 +1,108 @@
-be 184
-have 81
-say 49
-do 40
-cat 22
-people 21
-know 21
-go 19
-think 18
-see 18
-very 17
-look 17
-back 16
-street 15
-not 15
-something 14
-get 14
-cloak 13
-so 13
-out 13
-up 12
-eye 12
-even 12
-seem 11
-sit 11
-name 11
-never 10
-owl 10
-here 10
-man 10
-boy 9
-call 9
-little 9
-just 9
-day 9
-star 9
-number 8
-last 8
-find 8
-down 8
-now 8
-tell 8
-wall 8
-turn 8
-much 7
-corner 7
-come 7
-next 7
-thing 7
-sister 7
-watch 7
-son 7
-right 6
-nothing 6
-mind 6
-drill 6
-reason 6
-good 6
-well 6
-fell 6
-whisper 6
-suddenly 6
-as 6
-take 6
-walk 6
-sign 6
-make 6
-only 6
-head 6
-notice 6
-today 5
-old 5
-too 5
-most 5
-anything 5
-normal 5
-motorcycle 5
-kill 5
-light 5
-large 5
-letter 5
-almost 5
-lemon 5
-time 5
-lot 5
-suppose 5
-dumbledore 5
-still 5
-sir 5
-then 5
-place 5
-stand 5
-window 5
-give 5
-wear 5
-blanket 5
-few 5
-put 5
-drop 5
-everyone 4
-hear 4
-leave 4
-drive 4
-expect 4
-voice 4
-live 4
-click 4
-daylight 4
-wake 4
-dear 4
-want 4
-front 4
-garden 4
-instead 4
-house 4
-hop 4
-way 4
-hair 4
-long 4
-hold 4
-morning 4
-door 4
-try 4
-bundle 4
-off 4
-asleep 4
-road 4
-shoot 4
-mysterious 4
-tabby 4
-move 4
-map 4
-stop 4
-point 4
-celebrate 4
-realize 4
-night 4
-face 3
-famous 3
-upset 3
-same 3
-rumor 3
-finally 3
-fly 3
-saw 3
-sky 3
-silver 3
-explain 3
-pull 3
-everything 3
-small 3
-word 3
-smile 3
-sure 3
-sound 3
-dress 3
-year 3
-read 3
-great 3
-pretend 3
-open 3
-moment 3
-more 3
-twice 3
-lay 3
-muggles 3
-lamp 3
-town 3
-new 3
-news 3
-normally 3
-other 3
-glass 3
-over 3
-there 3
-owls 3
-hard 3
-happen 3
-pass 3
-hand 3
-pocket 3
-ground 3
-potters 3
-stupid 3
-.... 3
-arrive 3
-bed 3
-boot 3
-again 3
-break 3
-ask 3
-air 3
-car 3
-away 3
-believe 3
-bear 3
-around 3
-arm 3
-change 3
-close 2
-stiffly 2
-step 2
-least 2
-clothes 2
-start 2
-stare 2
-strange 2
-young 2
-life 2
-let 2
-kind 2
-spot 2
-spend 2
-lily 2
-speed 2
-child 2
-spectacle 2
-living 2
-speak 2
-soon 2
-kiss 2
-jerk 2
-kick 2
-keep 2
-half 2
-half-moon 2
-country 2
-handkerchief 2
-happy 2
-thank 2
-hardly 2
-concentrate 2
-telephone 2
-heart 2
-tea 2
-tall 2
-swoop 2
-home 2
-sweet 2
-however 2
-hug 2
-huge 2
-hurry 2
-aunt 2
-imagine 2
-important 2
-such 2
-involve 2
-baby 2
-low 2
-beard 2
-able 2
-marking 2
-sense 2
-secret 2
-second 2
-scream 2
-overhead 2
-big 2
-past 2
-pat 2
-ruffle 2
-room 2
-perfectly 2
-roar 2
-pick 2
-report 2
-pop 2
-really 2
-bit 2
-power 2
-black 2
-reach 2
-problem 2
-promise 2
-rather 2
-blink 2
-quite 2
-set 2
-office 2
-several 2
-nearly 2
-mean 2
-sniff 2
-mention 2
-snap 2
-minute 2
-sleep 2
-mood 2
-catch 2
-careless 2
-mouth 2
-mustache 2
-neck 2
-shake 2
-neighbor 2
-sight 2
-shoulder 2
-shooting 2
-nod 2
-nonsense 2
-sharp 2
-nose 2
-bun 2
-broad 2
-bring 2
-thin 2
-blame 2
-wait 2
-always 2
-disappear 2
-week 2
-true 2
-trust 2
-gently 2
-act 2
-first 2
-tuck 2
-fix 2
-wonder 2
-woman 2
-usual 2
-different 2
-twelve 2
-angrily 2
-exactly 2
-edge 2
-eleven 2
-frighten 2
-ever 2
-uncle 2
-end 2
-foot 2
-wide 2
-enough 2
-traffic 2
-excitedly 2
-good-bye 2
-write 2
-grow 2
-throw 2
-far 2
-all 2
-allow 2
-appear 2
-anyone 2
-tiny 2
-fear 2
-together 2
-tonight 2
-fact 2
-also 2
-uneasy 2
-dead 2
-dare 2
-dark 2
-shudder 1
-shaped 1
-behavior 1
-weatherman 1
-wheel 1
-sharply 1
-whiskery 1
-affect 1
-shape 1
-sip 1
-silence 1
-whisperer 1
-whole 1
-silent 1
-behave 1
-before 1
-silently 1
-shhh 1
-belt 1
-shower 1
-shine 1
-show 1
-sideways 1
-shaggy 1
-shout 1
-weather 1
-simply 1
-sighting 1
-single 1
-weirdo 1
-afternoon 1
-wet 1
-bend 1
-shoo 1
-shocked 1
-sinking 1
-silly 1
-admiring 1
-severe-looking 1
-worried 1
-rise 1
-worry 1
-bird 1
-reply 1
-repeat 1
-remember 1
-relieve 1
-relate 1
-receiver 1
-bird-watchers 1
-wounded 1
-wrestle 1
-wrong 1
-real 1
-ready 1
-yawn 1
-yeah 1
-about 1
-rattle 1
-yell 1
-yesterday 1
-rain 1
-you-know- 1
-quiver 1
-youknow-who 1
-bind 1
-robe 1
-wife 1
-world 1
-seriously 1
-sensible 1
-wild 1
-seize 1
-bent 1
-best 1
-secretary 1
-agree 1
-wiping 1
-screaming 1
-scratchy 1
-wise 1
-scars 1
-scar 1
-bet 1
-better 1
-wo 1
-sad 1
-s-s-sorry 1
-bike 1
-rummage 1
-rumbling 1
-root 1
-work 1
-roll 1
-age 1
-though 1
-size 1
-beefy 1
-swap 1
-swallow 1
-survive 1
-surprise 1
-surely 1
-astound 1
-anxious 1
-trying 1
-sunrise 1
-suggest 1
-awake 1
-tuft 1
-subject 1
-answer 1
-stunt 1
-stumble 1
-stuff 1
-stroke 1
-angry 1
-strike 1
-stretch 1
-twinkling 1
-quickly 1
-stranger 1
-twitch 1
-swarmin 1
-trick 1
-sweep 1
-anywhere 1
-thought 1
-throat 1
-tidy 1
-tie 1
-armchair 1
-tight 1
-thankful 1
-tin 1
-ter 1
-tend 1
-apart 1
-tawny 1
-tremble 1
-tantrum 1
-tangle 1
-top 1
-talk 1
-takin 1
-tail 1
-astonish 1
-swish 1
-trash 1
-swing 1
-swell 1
-strangely 1
-tyke 1
-unable 1
-violet 1
-special 1
-usually 1
-sparkle 1
-bathroom 1
-sorry 1
-vast 1
-amount 1
-beady-eyed 1
-viewers 1
-someone 1
-somehow 1
-somebody 1
-use 1
-visible 1
-sob 1
-voldemort 1
-approve 1
-bedroom 1
-slip 1
-slink 1
-sleeve 1
-sleeping 1
-sleepiness 1
-slam 1
-useful 1
-upstairs 1
-unblinkingly 1
-stay 1
-straight 1
-story 1
-bag 1
-stone 1
-understand 1
-baker 1
-stiff 1
-stern 1
-undursleyish 1
-steering 1
-steadily 1
-statue 1
-amuse 1
-unsticking 1
-unusual 1
-bakery 1
-ball 1
-squeaky 1
-unusually 1
-square 1
-spy 1
-unwelcome 1
-spotted 1
-split 1
-stream 1
-distinctly 1
-purse 1
-funny 1
-good-for-nothing 1
-gossip 1
-gray 1
-cousin 1
-grin 1
-grip 1
-course 1
-group 1
-grudgingly 1
-grunt 1
-guess 1
-couple 1
-handy 1
-contrary 1
-happily 1
-craning 1
-golden 1
-going 1
-getup 1
-furiously 1
-future 1
-cup 1
-gasp 1
-gaze 1
-cry 1
-giant 1
-creep 1
-gingerly 1
-crowd 1
-glance 1
-crooked 1
-glow 1
-glumly 1
-confusing 1
-haven 1
-completely 1
-imagination 1
-huddle 1
-hum 1
-hundred 1
-hunt 1
-husband 1
-hushed 1
-impatiently 1
-collect 1
-improve 1
-ing 1
-inky 1
-inside 1
-coldly 1
-irritably 1
-howl 1
-hour 1
-headlight 1
-common 1
-complete 1
-heaven 1
-heavily 1
-hedge 1
-heel 1
-help 1
-hid 1
-horribly 1
-hide 1
-high 1
-high-heeled 1
-hiss 1
-comfort 1
-collecting 1
-funny-looking 1
-full 1
-jacket 1
-curiously 1
-early 1
-earmuff 1
-else 1
-emerald 1
-emerald-green 1
-engine 1
-enrage 1
-dial 1
-evening 1
-determine 1
-destroy 1
-everywhere 1
-examine 1
-exasperate 1
-decide 1
-dull 1
-drum 1
-dinner 1
-discover 1
-distance 1
-dog 1
-dolphin 1
-discuss 1
-doorstep 1
-doughnut 1
-downpour 1
-driveway 1
-downright 1
-dozen 1
-draw 1
-drift 1
-director 1
-direction 1
-experts 1
-dead. 1
-daughter 1
-flyin 1
-flinch 1
-flocks 1
-flood 1
-floor 1
-flutter 1
-cut 1
-folk 1
-flick 1
-fond 1
-forehead 1
-forever 1
-forget 1
-forward 1
-freeze 1
-flicker 1
-flatter 1
-faintly 1
-darkness 1
-falter 1
-family 1
-dash 1
-fashion 1
-fast 1
-feast 1
-fence 1
-firmly 1
-dabbed 1
-fine 1
-finer 1
-finger 1
-finish 1
-firm 1
-is 1
-jam 1
-purple 1
-nephew 1
-oddly 1
-bright 1
-oh 1
-briefcase 1
-once 1
-one 1
-brick 1
-breeze 1
-open- 1
-opinion 1
-orange 1
-order 1
-bow 1
-outside 1
-bottle 1
-odd 1
-obviously 1
-buckled 1
-nice 1
-nervously 1
-c-c-ca 1
-buy 1
-busy 1
-newscaster 1
-business 1
-bushy 1
-building 1
-nighttime 1
-ninth 1
-noble 1
-none 1
-bury 1
-bunch 1
-borrowed 1
-owl-free 1
-boring 1
-blow 1
-plain 1
-planet 1
-blush 1
-blue 1
-poor 1
-possible 1
-precious 1
-pinprick 1
-press 1
-blonde 1
-probably 1
-prod 1
-proper 1
-proud 1
-bolt 1
-pinch 1
-pair 1
-peculiar 1
-parking 1
-disturb 1
-passersby 1
-pattern 1
-pavement 1
-peck 1
-peer 1
-pierce 1
-book 1
-perfect 1
-perhaps 1
-person 1
-persuade 1
-phone 1
-nerve 1
-neat 1
-jet-black 1
-near 1
-left 1
-leg 1
-legend 1
-chuckle 1
-lend 1
-less 1
-chortle 1
-lids 1
-choose 1
-lighter 1
-lightning 1
-like 1
-lip 1
-cheek 1
-living-room 1
-cigarette 1
-leather 1
-learn 1
-knock 1
-join 1
-judging 1
-jump 1
-cold 1
-clutch 1
-knee 1
-cloudy 1
-clear 1
-lace 1
-land 1
-climb 1
-late 1
-lately 1
-later 1
-chapter 1
-lose 1
-chair 1
-care 1
-casually 1
-carry 1
-mother 1
-carefully 1
-careful 1
-muffled 1
-mumble 1
-mixed 1
-murmur 1
-muscular 1
-mutter 1
-calmly 1
-narrow 1
-nation 1
-celebrating 1
-mix 1
-louder 1
-maybe 1
-loudly 1
-luck 1
-lucky 1
-lunchtime 1
-certainly 1
-cereal 1
-meet 1
-miss 1
-meeting 1
-middle 1
-midnight 1
-milk 1
-celebration 1
-mirror 1
-party 1
+be v 184
+back r 13
+boy n 8
+as r 6
+anything n 5
+almost r 5
+blanket n 5
+bundle n 4
+away r 3
+arrive v 3
+ask v 3
+around r 3
+arm n 3
+again r 3
+air n 3
+bear v 3
+boot n 3
+break v 3
+believe v 3
+bed n 3
+baby n 2
+bun n 2
+back n 2
+aunt n 2
+beard n 2
+blink v 2
+blame v 2
+bring v 2
+black a 2
+bit n 2
+big a 2
+broad a 2
+appear v 2
+asleep r 2
+always r 2
+anyone n 2
+allow v 2
+also r 2
+act v 2
+able a 2
+angrily r 2
+bedroom n 1
+awake n 1
+back v 1
+bag n 1
+baker n 1
+bakery n 1
+ball n 1
+bathroom n 1
+beady-eyed a 1
+beefy a 1
+astonish v 1
+before r 1
+behave v 1
+behavior n 1
+belt n 1
+bend v 1
+bent n 1
+best a 1
+bet v 1
+astound v 1
+asleep n 1
+bike n 1
+all v 1
+about r 1
+admiring n 1
+affect v 1
+afternoon n 1
+age n 1
+agree v 1
+all r 1
+amount n 1
+asleep a 1
+amuse v 1
+angry a 1
+answer v 1
+anxious a 1
+anywhere r 1
+apart r 1
+approve v 1
+armchair n 1
+better v 1
+bind v 1
+busy a 1
+buy v 1
+bushy a 1
+business n 1
+bury v 1
+bird n 1
+borrowed v 1
+bird-watchers n 1
+blonde n 1
+blow v 1
+blue a 1
+blush v 1
+bolt n 1
+book n 1
+boring a 1
+bottle n 1
+bunch n 1
+bow v 1
+boy r 1
+breeze n 1
+brick n 1
+briefcase n 1
+bright a 1
+buckled a 1
+building n 1

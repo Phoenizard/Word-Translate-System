@@ -3,8 +3,7 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from pandas import DataFrame
-import pandas as pd
-import numpy
+import enchant
 
 
 def inputText(root):
@@ -28,6 +27,7 @@ def inputText(root):
 
 def SortWord(word_table):
     StemmedWords = []
+    StemmedWords_pos = []
     wnl = WordNetLemmatizer()
     for s in word_table:
         s = nltk.sent_tokenize(s)
@@ -50,24 +50,31 @@ def SortWord(word_table):
                     if word_tub[1][0] == 'J':
                         # print(word_tub[0], word_tub[1], wnl.lemmatize(word_tub[0], 'a'))
                         StemmedWords.append(wnl.lemmatize(word_tub[0], 'a').lower())
+                        StemmedWords_pos.append('a')
                     elif word_tub[1][0] == 'N':
                         # print(word_tub[0], word_tub[1], wnl.lemmatize(word_tub[0], 'n'))
                         StemmedWords.append(wnl.lemmatize(word_tub[0], 'n').lower())
+                        StemmedWords_pos.append('n')
                     elif word_tub[1][0] == 'R':
                         # print(word_tub[0], word_tub[1], wnl.lemmatize(word_tub[0], 'r'))
                         StemmedWords.append(wnl.lemmatize(word_tub[0], 'r').lower())
+                        StemmedWords_pos.append('r')
                     elif word_tub[1][0] == 'V':
                         # print(word_tub[0], word_tub[1], wnl.lemmatize(word_tub[0], 'v'))
                         StemmedWords.append(wnl.lemmatize(word_tub[0], 'v').lower())
+                        StemmedWords_pos.append('v')
     # print(StemmedWords)
-    return StemmedWords
+    stemmed_words = DataFrame(StemmedWords)
+    stemmed_words.columns = ["Stemmed Words"]
+    Pos_words = DataFrame(StemmedWords_pos)
+    stemmed_words['PoS'] = Pos_words
+    stemmed_words['Count'] = 1
+    # print(stemmed_words)
+    return stemmed_words
 
 
 def analyzeProcess(stemmed_words):
-    stemmed_words = DataFrame(stemmed_words)
-    stemmed_words.columns = ['Stemmed Words']
-    stemmed_words['Count'] = 1
-    stemmed_words = stemmed_words.groupby(['Stemmed Words'], as_index=False).sum()
+    stemmed_words = stemmed_words.groupby(['Stemmed Words', 'PoS'], as_index=False).sum()
     uniqueWords = stemmed_words.sort_values(by="Count", ascending=False)
     uniqueWords = uniqueWords.reset_index(drop=True)
     print(uniqueWords)
@@ -81,19 +88,23 @@ def outputText(uniqueWords, OutputRoot):
     freq_txt = open(OutputRoot, 'w')
     for i in range(len(uniqueWords)):
         flag = 0
+        if len(str(uniqueWords["Stemmed Words"][i])) <= 1:
+            continue
         for j in str(uniqueWords["Stemmed Words"][i]):
-            if j == "*":
+            if j == "*" or j == '.':
                 flag = 1
                 break
-        if flag == 1: continue
-        freq_txt.write(str(uniqueWords["Stemmed Words"][i]) + " " + str(uniqueWords["Count"][i]))
+        if flag == 1:
+            continue
+        if not enchant.Dict("en_US").check(str(uniqueWords["Stemmed Words"][i])): # slow
+            continue
+        freq_txt.write(str(uniqueWords["Stemmed Words"][i]) + " " + str(uniqueWords["PoS"][i]) + " " + str(uniqueWords["Count"][i]))
         freq_txt.write("\n")
 
 
 def ucf(rootIn, rootOut):
     print("----------------------------------")
     rs = analyzeProcess(SortWord(inputText(rootIn)))
-    # inputText("/home/shay1138/Workshop/WordTranslateSystem/source/HarryPotter-demo.txt")
     print("Generate successfully")
     outputText(rs, rootOut)
     print("Print successfully")
