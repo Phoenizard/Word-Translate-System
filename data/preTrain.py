@@ -1,5 +1,5 @@
+# coding=utf-8
 import pandas as pd
-import os
 
 config_ranks = 59000
 result = open("wordlist.txt", 'w')

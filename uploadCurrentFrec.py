@@ -96,8 +96,8 @@ def outputText(uniqueWords, OutputRoot):
                 break
         if flag == 1:
             continue
-        if not enchant.Dict("en_US").check(str(uniqueWords["Stemmed Words"][i])): # slow
-            continue
+        # if not enchant.Dict("en_US").check(str(uniqueWords["Stemmed Words"][i])): # slow
+        #     continue
         freq_txt.write(str(uniqueWords["Stemmed Words"][i]) + " " + str(uniqueWords["PoS"][i]) + " " + str(uniqueWords["Count"][i]))
         freq_txt.write("\n")
 
