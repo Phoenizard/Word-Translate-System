@@ -3,18 +3,15 @@ import sys
 import os
 import requests
 from requests.exceptions import RequestException
-import json
 import uuid
 import hashlib
 import time
+import pandas as pd
+import enchant
 
 CURRENT_PATH = os.path.abspath(__file__)
 CURRENT_PATH = os.path.split(CURRENT_PATH)[0]
 
-file_in = open("./source/HarryPotter-demo.txt", 'r')
-# file_in = open("./source/HarryPotter.txt", 'r', encoding='utf-16')
-wordlist = open("./runs/result.txt", 'w')
-dict_words = {}
 YOUDAO_API_URL = 'https://openapi.youdao.com/api'
 YOUDAO_API_DOC = r'http://ai.youdao.com/DOCSIRMA/html/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E7%BF%BB%E8%AF%91/API%E6' \
                  r'%96%87%E6%A1%A3/%E6%96%87%E6%9C%AC%E7%BF%BB%E8%AF%91%E6%9C%8D%E5%8A%A1/%E6%96%87%E6%9C%AC%E7%BF%BB' \
@@ -71,10 +68,10 @@ def translateWord(n):
             basic = result['basic']
             explains = basic['explains']
             if len(explains) > 0:
+                outputText = []
                 for e in explains:
-                    outputText = []
                     tmp_cut = 0
-                    if (e[0] != 'a') and (e[0] != 'c') and (e[0] != 'p') and (e[0] != 'v') and (e[0] != 'n'):
+                    if (e[0] != 'a') and (e[0] != 'v') and (e[0] != 'n'):
                         continue
                     for i in range(len(e)):
                         if e[i] == '；':
@@ -85,75 +82,80 @@ def translateWord(n):
                     if tmp_cut < 2:
                         outputText.append(e)
                 if len(outputText) > 0:
-                    print(n)
-                    wordlist.write(n)
-                    wordlist.write("\n")
-                    for o in outputText:
-                        print(o)
-                        wordlist.write(o)
-                        wordlist.write("\n")
+                    return outputText
 
 
-def ReadAndSortTxt():
-    flag = 0
+def transTXT(root, src, rank_config,res):
+    dataset = []
+    f_word = open(src, 'r')
     while True:
-        lines = file_in.readline()
-        if not lines:
+        line = f_word.readline()
+        if not line:
             break
+        info = line.strip().split(" ")
+        info[2] = int(info[2])
+        dataset.append(info)
+    dataset = pd.DataFrame(dataset)
+    dataset.columns = ["Words", "PoS", "Count"]
+    f_word.close()
+    ifNeedTrans = {}
+    for i in range(int(rank_config * len(dataset)), len(dataset)):
+        if ifNeedTrans.__contains__(dataset["Words"][i]):
+            continue
         else:
-            lines = lines.split()
-            for this_line in lines:
-                tmp_word = this_line
-                f = 0
-                t = len(tmp_word) - 1
-                while True:
-                    if ('A' <= tmp_word[f] <= 'Z') or ('a' <= tmp_word[f] <= 'z'):
-                        break
-                    else:
-                        f += 1
-                    if f >= len(tmp_word):
-                        flag = 1
-                        break
-                while True:
-                    if ('A' <= tmp_word[t] <= 'Z') or ('a' <= tmp_word[t] <= 'z'):
-                        break
-                    else:
-                        t -= 1
-                    if t <= 0:
-                        flag = 1
-                        break
-                if f > t:
-                    flag = 1
-                if flag:
-                    flag = 0
+            if len(dataset["Words"][i]) > 3 and int(dataset["Count"][i]) >= 100:
+                ifNeedTrans[dataset["Words"][i]] = 1
+    # Prepare the dataset
+    data = []
+    try:
+        f_in = open(root, 'r')  # Get txt article
+        line = f_in.readline()
+    except:
+        f_in = open(root, 'r', encoding='utf-16')
+        line = f_in.readline()
+    line = line.strip()
+    data.append(line.split(" "))
+    while line:
+        line = f_in.readline()
+        line = line.strip()
+        data.append(line.split(" "))
+    f_in.close()
+    # Import the article
+    f_res = open(res, "w")
+    for i in range(len(data)):
+        tmp_trans = []
+        tmp_index = []
+        for j in range(len(data[i])):
+            if ifNeedTrans.__contains__(data[i][j]):
+                if enchant.Dict("en_US").check(str(data[i][j])):
+                    del ifNeedTrans[data[i][j]]
+                    tmp_trans.append(translateWord(data[i][j]))
+                    tmp_index.append(j)
+        for j in range(len(tmp_trans)):
+            index_t = tmp_index[j]+1
+            for k in tmp_trans:
+                data[i].insert(index_t, k)
+                index_t += 1
+        print(data[i])
+        for j in data[i]:
+            try:
+                print(j)
+                if isinstance(j, list):
+                    for k in j:
+                        f_res.write(str(k))
                 else:
-                    tmp_key = tmp_word[f: t + 1]
-                    form_key = tmp_key.split("-")
-                    for k in form_key:
-                        k = k.lower()
-                        if not dict_words.__contains__(k):
-                            is_find = False
-                            try_word = [k + 's', k + 'es', k + 'ed', k + 'en']
-                            for i in try_word:
-                                if dict_words.__contains__(i):
-                                    dict_words[i] += 1
-                                    is_find = True
-                                    break
-                            if not is_find:
-                                dict_words[k] = 1
-
-                        else:
-                            dict_words[k] += 1
-
-
-if __name__ == '__main__':
-    ReadAndSortTxt()
-    config_length = int(input("输入长度阈值："))  # recommend 10
-    for key in dict_words.keys():
-        if dict_words[key] == 1:
-            if len(key) >= config_length:
-                translateWord(key)
-            else:
+                    f_res.write(j)
+                    f_res.write(" ")
+            except:
                 continue
-    file_in.close()
-    wordlist.close()
+        f_res.write('\n')
+    f_res.close()
+    print("Mark Successfully")
+    # Find words and Insert translation
+
+
+# if __name__ == '__main__':
+#     root = "/home/shay1138/Workshop/WordTranslateSystem/source/HarryPotter-demo.txt"
+#     src = "/home/shay1138/Workshop/WordTranslateSystem/data/wordlist-test.txt"
+#     res = "/home/shay1138/Workshop/WordTranslateSystem/result/res_HarryPotter.txt"
+#     transTXT(root, src, 0.55, res)

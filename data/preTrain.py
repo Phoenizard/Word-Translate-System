@@ -1,12 +1,10 @@
 # coding=utf-8
 import pandas as pd
 
-config_ranks = 59000
 result = open("wordlist.txt", 'w')
 
 wordlist = pd.read_excel("COCA60000.xlsx", sheet_name="Sheet1")
 print("Creating a word list...")
-print("The threshold for word frequency is ", config_ranks)
 #   x is from 0 to 60022
 #   In [x, y], the number of [x, 0] equals to (x + 2)
 cnt = 0
